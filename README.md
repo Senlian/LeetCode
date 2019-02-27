@@ -1,5 +1,5 @@
 # LeetCode #
-> LeetCode题目练习答案
+> python3.6
 - v01
 - v02
 - v03
