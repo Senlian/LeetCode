@@ -48,8 +48,10 @@
 '''
 
 import re
+
+
 class Solution:
-    def myAtoi(self, s: 'str') -> 'int':
+    def myAtoi1(self, s: 'str') -> 'int':
         pattern = re.compile('^([\+\-]{0,1}\d+)([a-zA-z\d\w\s]+)?$')
         match = pattern.match(s.lstrip())
         print(match.groups())
@@ -63,9 +65,34 @@ class Solution:
             return 2 ** 31 - 1
         return num
 
+    def myAtoi(self, s: 'str') -> 'int':
+        index = 0
+        s = s.lstrip()
+        if not s:
+            return 0
+
+        minus = True if s.startswith('-') else False
+        if minus or s.startswith('+'):
+            s = s[1:]
+        print(s)
+        number = ''
+        while index < len(s):
+            if s[:index+1].isdigit():
+                number = s[:index+1]
+            else:
+                break
+            index += 1
+        number = number if number.isdigit() else '0'
+        number = int(number) if not minus else 0 - int(number)
+        if int(number) < -2 ** 31:
+            return -2 ** 31
+        if int(number) > 2 ** 31 - 1:
+            return 2 ** 31 - 1
+        return number
+
 
 if __name__ == '__main__':
     func = Solution()
-    s = '+42 aaa'
+    s = '-42 aaa'
     num = func.myAtoi(s)
     print(num)

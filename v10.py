@@ -123,5 +123,5 @@ class Solution:
 if __name__ == '__main__':
     func = Solution()
     # rst = func.isMatch1(' ', '.*')
-    rst = func.isMatch4("mississippi", "mis*is*p*.")
+    rst = func.isMatch4("mississippi", "missis.*")
     print(rst)

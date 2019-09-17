@@ -44,9 +44,13 @@ class Solution1(object):
         lastIndex = lenCur = 0
         for index, item in enumerate(s):
             if item in targetDict:
+                # 前一个重复元素的下标
                 findIndex = targetDict[item]
+                # 下一次开始查找的下标
                 lastIndex = max(lastIndex, findIndex)
+            # 当前下标-前一个重复数下标+1=无重复数长度
             lenCur = max(lenCur, index - lastIndex + 1)
+            # 向后查找记录前一个元素的下标
             targetDict[item] = index + 1
         return lenCur
 
@@ -54,6 +58,7 @@ class Solution1(object):
 class Solution:
     def lengthOfLongestSubstring(self, s):
         """
+        :desc: 双指针发求解，移动右边指针，当右边与左边有重复移动左边指针
         :type s: str
         :rtype: int
         """
@@ -61,13 +66,16 @@ class Solution:
         maxLen = 0
         curItems = ''
         for index, item in enumerate(s):
+            # 找到重复字符，记录无重复串，移动左边指针到找到的重复元素的下一元素重新开始找无重复串
             if item in items:
                 if maxLen <= len(items):
                     curItems = items
                 if index + 1 != len(s):
                     items = items[items.index(item) + 1:]
+            # 没有找到重复字符，则将字符添加到串
             if item not in items:
                 items += item
+            # 记录最大长度
             maxLen = max(maxLen, len(items))
         print(curItems)
         return maxLen
@@ -78,6 +86,6 @@ if __name__ == '__main__':
     # s = 'ab ba'
     # s = 'dvdf'
     s = 'aabdedc!ddca'
-    t = Solution1()
+    t = Solution()
     r = t.lengthOfLongestSubstring(s)
     print(r)

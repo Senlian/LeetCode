@@ -131,8 +131,8 @@ class Solution:
 
 if __name__ == '__main__':
     func = Solution()
-    s = 'abbc'
+    s = 'acaaaac'
     rs = func.longestPalindrome3(s)
-    print(s)
+
     print(rs)
-    print(func.isPalindrome(rs))
+

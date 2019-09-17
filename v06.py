@@ -110,12 +110,12 @@ class Solution:
         return "".join(rowArray)
 
 if __name__ == '__main__':
-    s = "PAYPALISHIRING"
+    s = "LEETCODEISHIRING"
     print(len(s))
     func = Solution()
-    rst = func.convert(s, 4)
-    rst1 = func.convert1(s, 4)
-    rst2 = func.convert2(s, 4)
+    rst = func.convert(s, 3)
+    rst1 = func.convert1(s, 3)
+    rst2 = func.convert2(s, 3)
     print(rst)
     print(rst1)
     print(rst2)

@@ -21,6 +21,8 @@ nums2 = [3, 4]
 
 则中位数是 (2 + 3)/2 = 2.5
 '''
+a = [1, 1, 2]
+
 
 # TODO: 归并排序求中位数
 class Solution1:
@@ -39,6 +41,7 @@ class Solution1:
         if len(nums3) % 2:
             return float(nums3[midIndex])
         return (nums3[midIndex - 1] + nums3[midIndex]) / 2
+
 
 # TODO: 桶排序求中位数
 class Solution:
@@ -103,8 +106,8 @@ class Solution:
 
 
 if __name__ == '__main__':
-    nums1 = [2, 3, 3, 3]
-    nums2 = [1, 1, 3]
+    nums1 = [2, 3, 4]
+    nums2 = [1]
 
     s = Solution()
     rst = s.findMedianSortedArrays(sorted(nums1), sorted(nums2))

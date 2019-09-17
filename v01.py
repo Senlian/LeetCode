@@ -17,7 +17,7 @@ nums = [3, 3]
 target = 6
 from copy import copy, deepcopy
 
-
+# TODO: 时间复杂度O(n),空间复杂度O(1)
 class Solution1(object):
     def twoSum(self, nums, target):
         """
@@ -27,6 +27,7 @@ class Solution1(object):
         """
         if len(nums) < 2:
             return
+
         numList = deepcopy(nums)
         for index1, num in enumerate(nums):
             rst = target - num
@@ -36,7 +37,7 @@ class Solution1(object):
             if rst in numList:
                 return index1, numList.index(rst)
 
-# TODO: 字典hash,降低复杂度
+# TODO: 字典hash,降低复杂度, 时间复杂度O(n),空间复杂度O(1)
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -58,3 +59,6 @@ class Solution(object):
 if __name__ == '__main__':
     s = Solution()
     print(s.twoSum(nums, target))
+    import random,string
+
+    print(''.join(random.sample(string.ascii_uppercase + string.ascii_lowercase +string.digits +string.ascii_letters, 16)))

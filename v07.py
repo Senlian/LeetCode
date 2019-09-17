@@ -54,6 +54,4 @@ if __name__ == '__main__':
     func = Solution()
     x = func.reverse1(-123)
     print(x)
-    print(-2 ** 31)
-    print(2 ** 31 - 1)
-    print(9646324351 > 2 ** 31 - 1)
+
